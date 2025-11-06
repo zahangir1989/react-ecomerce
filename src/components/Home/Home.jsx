@@ -16,7 +16,7 @@ const Home = () => {
           </div>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          We boost the growth for{" "}
+          <span className="text-8xl text-amber-300 ">W</span>e boost the growth for{" "}
           <span className="text-blue-600 relative inline-block">
             Startup to Fortune 500
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-200/60"></span>
