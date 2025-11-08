@@ -6,6 +6,7 @@ import "./App.css"
 import PurposeSection from "./components/PurposeSection";
 import BecomePartner from "./components/BecomePartner";
 import AnotherSection from "./AnotherSection/AnotherSection";
+import AnotherSections2 from "./AnotherSections2/AnotherSections2";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <PurposeSection/>
       <BecomePartner/>
       <AnotherSection/>
+      <AnotherSections2/>
     </>
   );
 }
