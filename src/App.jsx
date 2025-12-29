@@ -7,6 +7,7 @@ import PurposeSection from "./components/PurposeSection";
 import BecomePartner from "./components/BecomePartner";
 import AnotherSection from "./AnotherSection/AnotherSection";
 import AnotherSections2 from "./AnotherSections2/AnotherSections2";
+import PricingSection from "./components/PricingSection";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <BecomePartner/>
       <AnotherSection/>
       <AnotherSections2/>
+      <PricingSection/>
     </>
   );
 }
