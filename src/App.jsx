@@ -8,6 +8,8 @@ import BecomePartner from "./components/BecomePartner";
 import AnotherSection from "./AnotherSection/AnotherSection";
 import AnotherSections2 from "./AnotherSections2/AnotherSections2";
 import PricingSection from "./components/PricingSection";
+import ServiceSection from "./components/ServiceSection";
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
       <AnotherSection/>
       <AnotherSections2/>
       <PricingSection/>
+      <ServiceSection/>
+      <Footer/>
     </>
   );
 }
