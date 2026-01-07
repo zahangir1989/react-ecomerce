@@ -1,3 +1,4 @@
+import { Sun } from "lucide-react";
 import { Heart, Menu, Search, ShoppingCart, UserRound, X } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router";
@@ -7,22 +8,23 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#testimonials", label: "Blog" },
-    { href: "#contract", label: "Contract" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contract", label: "Contract" },
+    { href: "/help", label: "Help" },
   ];
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
       <div className="container w-full flex justify-between items-center mx-auto sm:px-6 lg:px-8 md:h-20 h-16 ">
         <div className="flex items-center gap-8">
-          <div className="flex items-center gap-4">
+          <Link to={'/'} className="flex items-center gap-4">
             <div className="flex items-center gap-1 cursor-pointer">
               <div className="w-4 h-4 bg-blue-600 rounded-full opacity-75 hover:opacity-100 transition-opacity"></div>
               <div className="w-4 h-4 bg-red-500 rounded-full -ml-2 hover:opacity-75 transition-opacity"></div>
             </div>
             <h1 className="tex t-[20px] font-bold">Bandage</h1>
-          </div>
+          </Link>
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((navLink, index) => (
@@ -55,18 +57,19 @@ export default function Navbar() {
         </button>
 
         {/* Mobile Button  end*/}
-        <div className="hidden md:flex  items-center gap-5">
+        <Link to={'/register'} className="hidden md:flex  items-center gap-5">
           <div className="flex items-center gap-2">
             <UserRound className="w-5 h-5 text-blue-600" />
             <h5 className="text-[15px] font-semibold text-blue-600">
               Login/Register
             </h5>
           </div>
+          <Sun className="w-5 h-5 text-blue-600" />
           <div className="flex items-center gap-5">
             <Search className="w-5 h-5 text-blue-600" />
             <ShoppingCart className="w-5 h-5 text-blue-600" />
           </div>
-        </div>
+        </Link>
       </div>
 
       {isMenuOpen && (

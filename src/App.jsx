@@ -1,29 +1,27 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home/Home";
-import CompanyLogo from "./components/CompanyLogo";
-import "./App.css"
-import PurposeSection from "./components/PurposeSection";
-import BecomePartner from "./components/BecomePartner";
-import AnotherSection from "./AnotherSection/AnotherSection";
-import AnotherSections2 from "./AnotherSections2/AnotherSections2";
-import PricingSection from "./components/PricingSection";
-import ServiceSection from "./components/ServiceSection";
-import Footer from "./components/Footer/Footer";
+import Home from "./Page/Home";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router";
+import About from "./components/About";
+import Contract from "./components/Contract";
+import Blog from "./components/Blog";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Help from "./components/Help";
 
 export default function App() {
   return (
     <>
-      <Navbar />
-      <Home/>
-      <CompanyLogo/>
-      <PurposeSection/>
-      <BecomePartner/>
-      <AnotherSection/>
-      <AnotherSections2/>
-      <PricingSection/>
-      <ServiceSection/>
-      <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contract" element={<Contract />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+           <Route path="/help" element={<Help />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

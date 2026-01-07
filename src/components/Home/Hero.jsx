@@ -1,7 +1,5 @@
-import { Clock, Star } from "lucide-react";
-import React from "react";
 import heroImage from "/bg.png";
-const Home = () => {
+const Hero = () => {
   return (
     <section className="container mx-auto flex flex-col md:flex-row justify-between px-6 pt-44">
       {/* left side */}
@@ -16,7 +14,8 @@ const Home = () => {
           </div>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          <span className="text-8xl text-amber-300 ">W</span>e boost the growth for{" "}
+          <span className="text-8xl text-amber-300 ">W</span>e boost the growth
+          for{" "}
           <span className="text-blue-600 relative inline-block">
             Startup to Fortune 500
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-200/60"></span>
@@ -55,4 +54,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

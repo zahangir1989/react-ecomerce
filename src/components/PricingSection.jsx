@@ -7,7 +7,7 @@ export default function PricingSection() {
   const starterPrice = Math.round(3000 * (productCount / 50));
   const businessPrice = Math.round(6500 * (productCount / 50));
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-blue-50">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-16">Pricing</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-12">

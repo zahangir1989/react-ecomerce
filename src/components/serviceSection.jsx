@@ -32,7 +32,7 @@ export default function ServiceSection() {
     },
   ];
   return (
-    <div className='py-20 container mx-auto px-4 sm:px-6 lg:px-8'>
+    <div className='py-20 container mx-auto px sm:px-6 lg:px-8'>
    <div className='flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24'>
 
     {/* Header */}
