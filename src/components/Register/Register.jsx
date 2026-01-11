@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../Navbar";
 import { Link } from "react-router";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
+  let navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -20,16 +22,25 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-        const {data} = await axios.post('http://localhost:3000/api/register', formData, {
-            withCredentials: true
-        })
-        console.log(data)
-    } catch (error) {
-        console.log(error)
-        
+    if (formData.password !== formData.confirmPassword) {
+      return alert("Password no match!!!");
     }
-    console.log(formData)
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/api/register",
+        formData,
+        {
+          withCredentials: true,
+        }
+      );
+      navigate("/");
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+
+    console.log(formData);
   };
 
   return (
@@ -95,7 +106,10 @@ const Register = () => {
                 </label>
                 <input
                   type="password"
+                  name="confirmPassword"
                   placeholder="••••••••"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                 />
               </div>

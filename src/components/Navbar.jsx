@@ -13,6 +13,7 @@ export default function Navbar() {
     { href: "/blog", label: "Blog" },
     { href: "/contract", label: "Contract" },
     { href: "/help", label: "Help" },
+    { href: "/product", label: "Product" },
   ];
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
@@ -57,19 +58,19 @@ export default function Navbar() {
         </button>
 
         {/* Mobile Button  end*/}
-        <Link to={'/register'} className="hidden md:flex  items-center gap-5">
+        <div className="hidden md:flex  items-center gap-5">
           <div className="flex items-center gap-2">
             <UserRound className="w-5 h-5 text-blue-600" />
-            <h5 className="text-[15px] font-semibold text-blue-600">
+            <Link to={'/register'} className="text-[15px] font-semibold text-blue-600">
               Login/Register
-            </h5>
+            </Link>
           </div>
           <Sun className="w-5 h-5 text-blue-600" />
           <div className="flex items-center gap-5">
             <Search className="w-5 h-5 text-blue-600" />
             <ShoppingCart className="w-5 h-5 text-blue-600" />
           </div>
-        </Link>
+        </div>
       </div>
 
       {isMenuOpen && (

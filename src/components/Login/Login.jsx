@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import axios from "axios";
 
 function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  let navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/api/login",
+        formData,
+        {
+          withCredentials: true,
+        }
+      );
+      if (data?.status === 201) {
+        navigate("/");
+      }
+
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
   return (
     <>
       <Navbar />
@@ -17,13 +52,16 @@ function Login() {
               <p className="text-gray-500 mt-2">Sign up to get started</p>
             </div>
             {/* Form */}
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-600 mb-1">
                   Email Address
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="example@email.com"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                 />
@@ -35,6 +73,9 @@ function Login() {
                 </label>
                 <input
                   type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="••••••••"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                 />

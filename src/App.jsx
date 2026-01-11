@@ -7,6 +7,8 @@ import Blog from "./components/Blog";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Help from "./components/Help";
+import Product from "./components/Product";
+import ProductDetails from "./components/ProductDetails";
 
 export default function App() {
   return (
@@ -19,7 +21,9 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-           <Route path="/help" element={<Help />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
         </Routes>
       </BrowserRouter>
     </>
